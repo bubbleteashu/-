@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-10-3 帛琉南島永續實踐計畫 | 青年百億海外圓夢基金</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        if (window.tailwind) {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            ocean: {
+                                50: '#f0f9ff',
+                                100: '#e0f2fe',
+                                500: '#0ea5e9',
+                                600: '#0284c7',
+                                700: '#0369a1',
+                                800: '#075985',
+                                900: '#0c4a6e',
+                            },
+                            reef: {
+                                400: '#2dd4bf',
+                                500: '#14b8a6',
+                                600: '#0d9488',
+                            },
+                            sun: '#f59e0b'
+                        },
+                        fontFamily: {
+                            sans: ['Noto Sans TC', 'Inter', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 基礎與離線備援樣式，確保任何環境下都有良好排版 */
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
+        body { margin: 0; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
+        img { max-width: 100%; display: block; }
+        .hero-palau {
+            background-color: #0c4a6e;
+            background-image: linear-gradient(to bottom, rgba(12, 74, 110, 0.72), rgba(15, 23, 42, 0.88)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- 氣象與行程調整醒目快訊橫幅 -->
+    <div class="bg-gradient-to-r from-rose-600 via-amber-600 to-rose-600 text-white text-xs sm:text-sm font-bold py-2.5 px-4 text-center shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <span class="bg-white text-rose-600 px-2 py-0.5 rounded text-[11px] font-black uppercase tracking-wider animate-pulse">重要異動</span>
+            <span>因海況不佳（颱風外圍環流船班停駛），8/06 與 8/10 行程已對調，請自備「雨衣／防水袋」！</span>
+            <a href="#schedule" onclick="switchScheduleTab('palau')" class="underline decoration-2 underline-offset-2 hover:text-amber-200 ml-1">
+                立即查看 8/06 調整後行程 →
+            </a>
+        </div>
+    </div>
+
+    <!-- 導覽列 -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+
+                <nav class="hidden md:flex space-x-7 text-sm font-semibold">
+                    <a href="#why-sophomore" class="text-slate-600 hover:text-ocean-600 transition">為何大二必去</a>
+                    <a href="#spots" class="text-slate-600 hover:text-ocean-600 transition">核心景點與田野</a>
+                    <a href="#schedule" class="text-slate-600 hover:text-ocean-600 transition">培訓與15日行程</a>
+                    <a href="#budget" class="text-slate-600 hover:text-ocean-600 transition">計畫費用與補助</a>
+                    <a href="#info" class="text-slate-600 hover:text-ocean-600 transition">報名資訊</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <button onclick="openApplyModal()" class="bg-ocean-600 hover:bg-ocean-700 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full shadow transition">
+                        立即預約說明會
+                    </button>
+                    <button id="mobile-btn" class="md:hidden p-2 text-slate-600">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 手機選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-3 space-y-2 text-sm font-semibold">
+            <a href="#why-sophomore" class="block py-1.5 text-slate-700">為何大二必去</a>
+            <a href="#spots" class="block py-1.5 text-slate-700">核心景點與田野</a>
+            <a href="#schedule" class="block py-1.5 text-slate-700">培訓與15日行程</a>
+            <a href="#budget" class="block py-1.5 text-slate-700">計畫費用與補助</a>
+            <a href="#info" class="block py-1.5 text-slate-700">報名資訊</a>
+        </div>
+    </header>
+
+    <!-- Hero 主視覺 -->
+    <section class="hero-palau text-white py-20 md:py-32 px-4">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <div class="inline-flex flex-wrap justify-center items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-ocean-100">
+                <span>🇹🇼 教育部青年發展署｜青年百億海外圓夢基金計畫（海外翱翔組）</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
+                大二暑假，把太平洋變成你的<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-reef-400 to-sky-300">ESG 永續田野實驗室</span>
+            </h1>
+            
+            <p class="text-slate-200 text-base sm:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+                專為<strong>大學二年級學生</strong>量身打造！116年7月29日至8月12日，深入邦交國帛琉，參與硨磲貝復育、艾萊州百年會所文化轉譯、臺灣大使館與國合會交流，累積含金量最高的跨文化履歷。
+            </p>
+
+            <!-- 關鍵數據標籤 -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto pt-4">
+                <div class="bg-slate-900/60 backdrop-blur border border-white/15 rounded-2xl p-3">
+                    <div class="text-xs text-slate-300">目標招收對象</div>
+                    <div class="text-lg sm:text-xl font-extrabold text-reef-400 mt-0.5">大學二年級生</div>
+                </div>
+                <div class="bg-slate-900/60 backdrop-blur border border-white/15 rounded-2xl p-3">
+                    <div class="text-xs text-slate-300">海外實踐天數</div>
+                    <div class="text-lg sm:text-xl font-extrabold text-white mt-0.5">15 天深度踏查</div>
+                </div>
+                <div class="bg-slate-900/60 backdrop-blur border border-white/15 rounded-2xl p-3">
+                    <div class="text-xs text-slate-300">核心聯合國指標</div>
+                    <div class="text-lg sm:text-xl font-extrabold text-amber-400 mt-0.5">6 大 SDGs 實踐</div>
+                </div>
+                <div class="bg-slate-900/60 backdrop-blur border border-white/15 rounded-2xl p-3">
+                    <div class="text-xs text-slate-300">經費支持</div>
+                    <div class="text-lg sm:text-xl font-extrabold text-sky-300 mt-0.5">圓夢基金補助</div>
+                </div>
+            </div>
+
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <a href="#schedule" class="bg-reef-500 hover:bg-reef-600 text-slate-950 font-extrabold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> 查看15天完整行程
+                </a>
+                <a href="#budget" class="bg-white/15 hover:bg-white/25 backdrop-blur border border-white/30 text-white font-bold px-7 py-3.5 rounded-xl transition flex items-center gap-2">
+                    <i class="fa-solid fa-coins"></i> 了解補助與費用
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 為什麼針對「大二學生」招募？ -->
+    <section id="why-sophomore" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-ocean-600 font-bold text-xs tracking-widest uppercase">Target Audience: Sophomores</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">為什麼「大二升大三」是參加的最佳時機？</h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2">擺脫大一的迷惘、搶在大三專題與實習卡位戰前，用一趟國家級海外計畫拉開競爭差距。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:border-ocean-400 transition">
+                <div class="w-12 h-12 bg-ocean-100 text-ocean-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3 class="font-bold text-lg text-slate-900 mb-2">大三實習與推甄的神級履歷</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    企業與研究所最看重「ESG 實戰」與「跨文化溝通」。親手產出五感永續地圖與質性田野故事，成為你大三申請企業實習的最強亮點。
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:border-reef-400 transition">
+                <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <h3 class="font-bold text-lg text-slate-900 mb-2">零焦慮英語田野與團隊分工</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    行前培訓提供大學生專屬「日常田野英文破冰句型包」，並採隊長、觀察員、文化記錄、影像控管分工，就算英文非母語也能自信開口！
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:border-amber-400 transition">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                </div>
+                <h3 class="font-bold text-lg text-slate-900 mb-2">外交與國際援助的第一手視野</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    不同於一般觀光團，我們直接走進<strong>駐帛琉臺灣大使館</strong>與<strong>國合會農技團／水產養殖所</strong>，見證臺灣在南太平洋的永續外交實力。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 帛琉核心景點與田野踏查亮點 -->
+    <section id="spots" class="py-16 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-ocean-600 font-bold text-xs tracking-widest uppercase">Fieldwork Destinations</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">15天深度走訪：帛琉永續景點與田野場域</h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">結合海洋生態、南島原民部落、外交機構與循環經濟的獨家路線。</p>
+                </div>
+                <!-- 分類篩選 -->
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="spot-filters">
+                    <button onclick="filterSpots('all', this)" class="spot-btn bg-ocean-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">全部場域</button>
+                    <button onclick="filterSpots('ocean', this)" class="spot-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-full text-xs font-bold">海洋與生態</button>
+                    <button onclick="filterSpots('culture', this)" class="spot-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-full text-xs font-bold">南島部落與古蹟</button>
+                    <button onclick="filterSpots('diplomacy', this)" class="spot-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-full text-xs font-bold">外交與永續產業</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="spots-grid">
+                <!-- JS 動態生成景點卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 行前培訓與 15 天海外行程 -->
+    <section id="schedule" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="bg-ocean-100 text-ocean-800 text-xs font-bold px-3 py-1 rounded-full">116年7月 － 8月完整時程</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">行前培訓與帛琉 15 日行程表</h2>
+            <p class="text-slate-600 text-sm mt-2">※ 行前培訓為必修課程，若無法參加視同放棄錄取資格。</p>
+        </div>
+
+        <!-- 切換 Tab -->
+        <div class="flex justify-center gap-3 mb-8">
+            <button onclick="switchScheduleTab('training')" id="btn-training" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-ocean-600 text-white shadow transition">
+                📚 7/14 行前培訓課表
+            </button>
+            <button onclick="switchScheduleTab('palau')" id="btn-palau" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition">
+                ✈️ 7/29 - 8/12 帛琉實踐行程
+            </button>
+        </div>
+
+        <!-- 行前培訓內容 -->
+        <div id="panel-training" class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900">行前培訓工作坊（全天必修）</h3>
+                    <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-ocean-600 mr-1"></i>地點：銘傳大學基河校區 J616 會議室</p>
+                </div>
+                <span class="inline-block bg-rose-50 text-rose-600 border border-rose-200 text-xs font-bold px-3 py-1 rounded-lg">
+                    時間：116年7月14日(三) 08:00 - 17:30
+                </span>
+            </div>
+
+            <div class="space-y-4 text-sm">
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-6 p-3.5 rounded-xl bg-slate-50">
+                    <span class="font-mono font-bold text-ocean-700 shrink-0">08:00 - 09:50</span>
+                    <div>
+                        <div class="font-bold text-slate-900">破冰認識與角色卡抽選（隊長／觀察員／文化記錄／影像控管）</div>
+                        <p class="text-slate-600 text-xs mt-1">30秒自我介紹、確認團隊責任鏈與跨組支援規則。</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-6 p-3.5 rounded-xl bg-ocean-50/70 border border-ocean-100">
+                    <span class="font-mono font-bold text-ocean-700 shrink-0">10:00 - 12:30</span>
+                    <div>
+                        <div class="font-bold text-slate-900">ESG 田野線索轉化 ＆「五感永續地圖」實作練習</div>
+                        <p class="text-slate-600 text-xs mt-1">解析帛琉減塑防曬乳禁令(E)、Bai 傳統會所維護(S)、帛琉宣言與 Bul 禁漁制度(G)，發放永續路徑筆記本實作。</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-6 p-3.5 rounded-xl bg-slate-50">
+                    <span class="font-mono font-bold text-ocean-700 shrink-0">13:30 - 15:50</span>
+                    <div>
+                        <div class="font-bold text-slate-900">影像導引法 (Photo-Elicitation) ＆ 英語現地微訪談技巧</div>
+                        <p class="text-slate-600 text-xs mt-1">學習以「平等平視」的南島同族視角記錄故事，發放大學生田野英文破冰句型包，練習 5-10 分鐘輕鬆訪談。</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-6 p-3.5 rounded-xl bg-amber-50/70 border border-amber-100">
+                    <span class="font-mono font-bold text-amber-700 shrink-0">16:00 - 17:30</span>
+                    <div>
+                        <div class="font-bold text-slate-900">母系社會部落禁忌 ＆「臺帛模擬田野衝擊演練」沙盒</div>
+                        <p class="text-slate-600 text-xs mt-1">了解進入男人會館(Bai)穿著與性別規範、婉拒訪談時的優雅退場禮儀，並進行情境角色扮演演練與行前行政宣導。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 帛琉 15 天行程內容 -->
+        <div id="panel-palau" class="hidden max-w-4xl mx-auto space-y-4">
+            <!-- JS 動態渲染15天每日行程 -->
+        </div>
+    </section>
+
+    <!-- 費用與補助說明 Section -->
+    <section id="budget" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-reef-400 font-bold text-xs tracking-widest uppercase">Funding & Expenses</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-1">計畫費用與政府補助結構</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2">本計畫隸屬「青年百億海外圓夢基金計畫」，大幅減輕大學生海外學習經濟負擔。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- 計畫補助項目 -->
+                <div class="bg-slate-800/90 border border-reef-500/40 rounded-2xl p-6 sm:p-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-reef-500/20 text-reef-300 text-xs font-bold px-3 py-1 rounded-full">圓夢基金核心支持</span>
+                        <i class="fa-solid fa-circle-check text-reef-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">計畫統籌與補助涵蓋項目</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-plane-departure text-reef-400 mt-1"></i>
+                            <span><strong>國際交通：</strong>桃園國際機場往返帛琉國際機場機票。</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-hotel text-reef-400 mt-1"></i>
+                            <span><strong>當地食宿與交通：</strong>帛琉 14 晚住宿安排、計畫期間團體膳食、海域探勘船隻與陸域接駁。</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-chalkboard-user text-reef-400 mt-1"></i>
+                            <span><strong>課程與參訪資源：</strong>行前培訓講師費、永續路徑筆記本教材、硨磲貝復育行動與各機構參訪費用。</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-shield-halved text-reef-400 mt-1"></i>
+                            <span><strong>海外保險：</strong>計畫執行期間之海外旅遊平安險與醫療保障。</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-3.5 bg-slate-900/80 rounded-xl text-xs text-slate-400">
+                        ※ 實際補助額度與自付額比例依教育部青年發展署「青年百億海外圓夢基金計畫」當年度公告簡章規定辦理。
+                    </div>
+                </div>
+
+                <!-- 學生自備與注意事項 -->
+                <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-500/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full">大二學員自理項目</span>
+                            <i class="fa-solid fa-suitcase-rolling text-amber-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">個人行前準備與自理費用</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-passport text-amber-400 mt-1"></i>
+                                <span><strong>證照規費：</strong>個人中華民國護照新辦或換發費用（須確保效期 6 個月以上）。</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-train text-amber-400 mt-1"></i>
+                                <span><strong>國內交通：</strong>前往「銘傳大學基河校區」參加 7/14 行前培訓及往返桃園機場之國內交通費。</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-wifi text-amber-400 mt-1"></i>
+                                <span><strong>個人通訊與零用：</strong>帛琉當地漫遊或網卡費用、Surangel's 超市或文創紀念品等個人消費。</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-pump-soap text-amber-400 mt-1"></i>
+                                <span><strong>海洋友善裝備：</strong>帛琉嚴格禁用含害珊瑚成分之防曬乳，須自備物理性／海洋友善防曬與環保水瓶。</span>
+                            </li>
+                            <li class="flex items-start gap-2.5 p-3 rounded-xl bg-amber-500/20 border-2 border-amber-400 shadow-sm">
+                                <i class="fa-solid fa-cloud-showers-heavy text-amber-300 text-base mt-0.5"></i>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <strong class="text-amber-200 text-sm">雨衣／防水袋（必備防雨防潮）</strong>
+                                        <span class="bg-rose-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full">NEW 新增</span>
+                                    </div>
+                                    <p class="text-xs text-amber-100/90 mt-0.5">因應海況變化與熱帶陣雨，請務必攜帶輕便雨衣及電子設備／筆記本專用防水袋。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-slate-400">
+                        <span>具低收入戶／中低收入戶等身份者，可依簡章申請全額補助</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 報名資訊與關鍵時程 Section -->
+    <section id="info" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-ocean-50 to-teal-50 border border-ocean-200 rounded-3xl p-6 sm:p-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-2 space-y-4">
+                    <span class="inline-block bg-ocean-600 text-white text-xs font-bold px-3 py-1 rounded-full">招收資訊總覽</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">準備好成為南島文化轉譯者了嗎？</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-sm">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="text-xs text-slate-400 font-semibold">招收對象資格</div>
+                            <div class="font-bold text-slate-900 mt-1">全國大專校院大學二年級在學學生（具中華民國國籍）</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="text-xs text-slate-400 font-semibold">計畫代碼與名稱</div>
+                            <div class="font-bold text-slate-900 mt-1">N-10-3 帛琉南島永續實踐計畫（海外翱翔組）</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="text-xs text-slate-400 font-semibold">必修行前培訓</div>
+                            <div class="font-bold text-slate-900 mt-1">116/07/14 (三) 08:00-17:30｜銘傳基河校區 J616</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="text-xs text-slate-400 font-semibold">海外實踐期間</div>
+                            <div class="font-bold text-slate-900 mt-1">116/07/29 (四) － 116/08/12 (四)，共 15 天</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center space-y-4">
+                    <div class="w-14 h-14 bg-ocean-100 text-ocean-600 rounded-2xl flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">索取完整簡章與報名表</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        留下你的學校科系與聯絡方式，我們將寄送「N-10-3 計畫申請書撰寫攻略」與線上說明會連結給你！
+                    </p>
+                    <button onclick="openApplyModal()" class="w-full bg-ocean-600 hover:bg-ocean-700 text-white font-bold py-3 rounded-xl shadow transition">
+                        登記大二報名諮詢
+                    </button>
+                    <p class="text-[11px] text-slate-400">主辦單位：教育部青年發展署及合作執行單位</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-xs px-4">
+        <p class="font-semibold text-slate-300 mb-1">青年百億海外圓夢基金計畫 － 海外翱翔組 ｜ N-10-3 帛琉南島永續實踐計畫</p>
+        <p>※ 網站行程與課程內容依小簡章編製，教育部青年發展署及合作單位保有調整及最終解釋之權利。</p>
+    </footer>
+
+    <!-- 報名諮詢彈窗 Modal (替代 alert) -->
+    <div id="apply-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeApplyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <div id="modal-form-view">
+                <span class="text-xs font-bold text-ocean-600 bg-ocean-50 px-2.5 py-1 rounded-full">大二專屬通道</span>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-2">登記計畫說明會與簡章寄送</h3>
+                <p class="text-xs text-slate-500 mt-1 mb-4">填寫基本資料，獲取面試與 ESG 動機書撰寫指引。</p>
+                
+                <form onsubmit="handleFormSubmit(event)" class="space-y-3 text-sm">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">姓名</label>
+                        <input type="text" required placeholder="請輸入真實姓名" class="w-full px-3.5 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ocean-500">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">就讀大學與科系（限大二學生）</label>
+                        <input type="text" required placeholder="例如：國立臺灣大學 森林環境暨資源學系 二年級" class="w-full px-3.5 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ocean-500">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">電子信箱 Email</label>
+                        <input type="email" required placeholder="student@university.edu.tw" class="w-full px-3.5 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ocean-500">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">最感興趣的團隊角色卡</label>
+                        <select class="w-full px-3.5 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ocean-500 bg-white">
+                            <option>團隊隊長（統籌溝通與危機應變）</option>
+                            <option>ESG 觀察員（環境與制度田野分析）</option>
+                            <option>文化記錄員（微訪談與故事轉譯）</option>
+                            <option>影像控管員（Photo-Elicitation 視覺紀錄）</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-ocean-600 hover:bg-ocean-700 text-white font-bold py-2.5 rounded-xl shadow mt-2 transition">
+                        送出登記資料
+                    </button>
+                </form>
+            </div>
+
+            <div id="modal-success-view" class="hidden text-center py-6 space-y-3">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="text-lg font-extrabold text-slate-900">登記成功！</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    我們已收到你的大二專案諮詢登記！<br>完整《N-10-3 帛琉南島永續實踐計畫》申請懶人包已發送至你的信箱。
+                </p>
+                <button onclick="closeApplyModal()" class="mt-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2 rounded-xl text-xs">
+                    返回瀏覽網站
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 景點資料 (依據 PDF 第 4-6 頁內容，並同步更新 8/06 與 8/10 對調後的 Google Maps 連結)
+        const palauSpots = [
+            {
+                title: '洛克群島與硨磲貝野放復育區',
+                category: 'ocean',
+                sdg: 'SDG 14 海洋生態',
+                desc: '親身潛入世界遺產洛克群島海域，參與硨磲貝海域野放復育行動（原 8/06 BUL 垂釣體驗已調整至 8/10 執行）。',
+                img: 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=800&auto=format&fit=crop',
+                mapQuery: 'Rock Islands Palau',
+                mapLabel: 'Rock Islands 洛克群島（8/10 垂釣體驗）'
+            },
+            {
+                title: '艾萊州百年男人會館 (Bai) 與古老部落',
+                category: 'culture',
+                sdg: 'SDG 11 永續城市與社區',
+                desc: '走訪帛琉母系社會文化核心，考察百年男人會館彩繪建築與傳統戰船，學習如何以平視視角記錄南島文化。',
+                img: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop',
+                mapQuery: 'Airai Bai Palau',
+                mapLabel: 'Airai Bai 艾萊州男人會館'
+            },
+            {
+                title: '石錢島與藍炭紅樹林生態探索',
+                category: 'ocean',
+                sdg: 'SDG 14 & SDG 15',
+                desc: '搭乘無動力方舟探勘石錢島海域、考察二戰遺跡與紅樹林藍炭固碳生態，並與當地社區進行質性微訪談。',
+                img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop',
+                mapQuery: 'Ulong Island Palau',
+                mapLabel: '石錢島／紅樹林保護區'
+            },
+            {
+                title: '駐帛琉臺灣大使館 ＆ 國合會技術團',
+                category: 'diplomacy',
+                sdg: 'SDG 2 零飢餓 & 永續外交',
+                desc: '參訪臺灣大使館、國合會農技團畜牧中心與水產養殖所，第一線見證臺帛邦交合作與糧食永續技術。',
+                img: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop',
+                mapQuery: 'Embassy of the Republic of China (Taiwan) in Palau',
+                mapLabel: '駐帛琉臺灣大使館'
+            },
+            {
+                title: '巴貝大島天使大瀑布 ＆ 特有鳥類調查（8/06 調整場域）',
+                category: 'ocean',
+                sdg: 'SDG 15 陸域生態',
+                desc: '深入帛琉最大島嶼巴貝大島，執行陸域森林生態與特有種鳥類田野調查（已調整至 8/06 優先進行陸域考察）。',
+                img: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800&auto=format&fit=crop',
+                mapQuery: 'Ngardmau Waterfall Babeldaob Palau',
+                mapLabel: 'Babeldaob 巴貝大島森林生態區（8/06 調整）'
+            },
+            {
+                title: 'ECOGLASS 琉璃工廠 ＆ 永續飯店經濟',
+                category: 'diplomacy',
+                sdg: 'SDG 12 責任消費與生產',
+                desc: '參訪回收玻璃再製的 ECOGLASS 琉璃工藝、小農永續餐廳、PALAU HOTEL 與當地魚市場及 WCTC 超市供應鏈。',
+                img: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop',
+                mapQuery: 'Palau Glass Studio Koror',
+                mapLabel: 'ECOGLASS 琉璃工廠'
+            }
+        ];
+
+        // 15天每日行程 (8/06 與 8/10 已對調，並附帶 Google Maps 導航查詢)
+        const dailySchedule = [
+            { date: '116/07/29 (Day 1)', title: '啟程飛往帛琉 ＆ 團隊共識座談', desc: '桃園機場搭機抵達帛琉，住宿安頓、環境熟悉與共同公約共識座談。', sdg: '團隊建立', mapQuery: 'Roman Tmetuchl International Airport Palau' },
+            { date: '116/07/30 (Day 2)', title: '【海洋生態體察 I】洛克群島海域探勘', desc: '洛克群島當地人文與海洋生態環境介紹。', sdg: 'SDG 14', mapQuery: 'Rock Islands Palau' },
+            { date: '116/07/31 (Day 3)', title: '【永續復育體察 II】硨磲貝海域野放復育', desc: '實際參與帛琉指標性的硨磲貝海域野放復育行動。', sdg: 'SDG 14', mapQuery: 'Palau Mariculture Demonstration Center' },
+            { date: '116/08/01 (Day 4)', title: '【部落踏查 I】早市經濟 ＆ 國合會技術團', desc: '觀察當地早市經濟；參訪國合會農技團畜牧中心與水產養殖所。', sdg: 'SDG 2 & 14', mapQuery: 'Taiwan Technical Mission Palau' },
+            { date: '116/08/02 (Day 5)', title: '【部落踏查 II】艾萊州百年男人會館', desc: '參訪帛琉私人博物館、艾萊州百年男人會館、戰船與古老部落巡禮。', sdg: 'SDG 11', mapQuery: 'Airai Bai Palau' },
+            { date: '116/08/03 (Day 6)', title: '【部落踏查 III】永續農場、餐廳與飯店', desc: '參訪當地小農永續農場、永續餐廳及 PALAU HOTEL 永續營運模式。', sdg: 'SDG 12', mapQuery: 'Palau Hotel Koror' },
+            { date: '116/08/04 (Day 7)', title: '【部落踏查 IV】巴貝大島天使大瀑布', desc: '巴貝大島天使大瀑布陸域生態考察與私人博物館參訪。', sdg: 'SDG 15', mapQuery: 'Ngardmau Waterfall Palau' },
+            { date: '116/08/05 (Day 8)', title: '【部落踏查 V】產銷物流與市場經濟', desc: '參訪當地魚市場、最大超市 Surangel’s Supercenter 與 WCTC 超市。', sdg: 'SDG 12', mapQuery: 'Surangels Supercenter Airai Palau' },
+            {
+                date: '116/08/06 (Day 9)',
+                title: '永續生態田野調查：帛琉特有種鳥類（原 8/10 行程）',
+                desc: '執行帛琉當地特有種鳥類與巴貝大島陸域森林生態解析田野調查（已與 8/10 海域行程對調，請攜帶雨衣／防水袋）。',
+                sdg: 'SDG 15',
+                alertBanner: '因海況不佳，行程已調整',
+                mapQuery: 'Babeldaob Island Palau',
+                mapLabel: 'Google Maps：巴貝大島森林生態區'
+            },
+            { date: '116/08/07 (Day 10)', title: '【海域人文體察 II】石錢島與無動力方舟', desc: '體驗無動力方舟、藍炭紅樹林之旅、戰爭遺跡考察與石錢島社區訪談。', sdg: 'SDG 14 & 15', mapQuery: 'Ulong Island Palau' },
+            { date: '116/08/08 (Day 11)', title: '文創工藝與原民經濟：ECOGLASS 琉璃工廠', desc: '考察回收玻璃再造工藝與原住民經濟分配機制。', sdg: 'SDG 12', mapQuery: 'Palau Glass Studio Koror' },
+            { date: '116/08/09 (Day 12)', title: '永續城市與外交：臺灣大使館參訪', desc: '參訪駐帛琉臺灣大使館與泛太平洋度假村永續生態園區。', sdg: 'SDG 11', mapQuery: 'Embassy of the Republic of China (Taiwan) in Palau' },
+            {
+                date: '116/08/10 (Day 13)',
+                title: '【海域人文體察 I】BUL 垂釣文化體驗（原 8/06 行程）',
+                desc: '洛克群島海域探勘與傳統 BUL 禁漁垂釣文化體驗（由 8/06 順延調整至此日執行）。',
+                sdg: 'SDG 14',
+                swappedTag: '已與 8/06 對調',
+                mapQuery: 'Rock Islands Palau',
+                mapLabel: 'Google Maps：洛克群島海域'
+            },
+            { date: '116/08/11 (Day 14)', title: '田野觀察綜整 ＆ 補充微訪談', desc: '整理五感永續地圖筆記本，進行最後階段社區微訪談資料補強。', sdg: 'SDG 4', mapQuery: 'Koror Palau' },
+            { date: '116/08/12 (Day 15)', title: '帛琉永續 ESG 綜合座談會 ＆ 賦歸返台', desc: '成果回饋交流、跨文化與環境素養量表後測，搭機返回桃園機場。', sdg: '結訓成果', mapQuery: 'Roman Tmetuchl International Airport Palau' }
+        ];
+
+        // 渲染景點
+        function renderSpots(filter) {
+            const grid = document.getElementById('spots-grid');
+            grid.innerHTML = '';
+            const list = filter === 'all' ? palauSpots : palauSpots.filter(s => s.category === filter);
+
+            list.forEach(spot => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 flex flex-col justify-between hover:shadow-md transition';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-44 bg-slate-200 overflow-hidden">
+                            <img src="${spot.img}" alt="${spot.title}" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='https://placehold.co/600x400/0284c7/ffffff?text=Palau+Fieldwork'">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur text-reef-300 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                                ${spot.sdg}
+                            </span>
+                        </div>
+                        <div class="p-5 pb-3">
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">${spot.title}</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">${spot.desc}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2">
+                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spot.mapQuery)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-ocean-50 hover:bg-ocean-100 text-ocean-700 border border-ocean-200 font-bold text-xs py-2 px-3 rounded-xl transition">
+                            <i class="fa-solid fa-location-dot text-rose-500"></i> ${spot.mapLabel}
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterSpots(cat, btn) {
+            document.querySelectorAll('.spot-btn').forEach(b => {
+                b.classList.remove('bg-ocean-600', 'text-white');
+                b.classList.add('bg-white', 'text-slate-700');
+            });
+            btn.classList.remove('bg-white', 'text-slate-700');
+            btn.classList.add('bg-ocean-600', 'text-white');
+            renderSpots(cat);
+        }
+
+        // 渲染15天行程
+        function renderDailySchedule() {
+            const container = document.getElementById('panel-palau');
+            container.innerHTML = dailySchedule.map(item => `
+                <div class="${item.alertBanner ? 'bg-amber-50/90 border-2 border-rose-500 shadow-md' : 'bg-white border border-slate-200 shadow-sm'} rounded-2xl overflow-hidden transition">
+                    ${item.alertBanner ? `
+                        <div class="bg-rose-600 text-white px-4 py-2 text-xs sm:text-sm font-extrabold flex items-center justify-between gap-2">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-300 text-base"></i>
+                                ${item.alertBanner}
+                            </span>
+                            <span class="bg-white/20 text-white text-[11px] px-2 py-0.5 rounded">原 8/06 船班停駛，已與 8/10 對調</span>
+                        </div>
+                    ` : ''}
+                    <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+                            <span class="inline-block ${item.alertBanner ? 'bg-rose-100 text-rose-800 border-rose-300' : 'bg-ocean-50 text-ocean-700 border-ocean-200'} border font-mono text-xs font-bold px-3 py-1.5 rounded-lg shrink-0 w-fit">
+                                ${item.date}
+                            </span>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-bold text-slate-900 text-sm sm:text-base">${item.title}</h4>
+                                    ${item.swappedTag ? `<span class="bg-amber-100 text-amber-800 border border-amber-300 text-[11px] font-bold px-2 py-0.5 rounded-full">${item.swappedTag}</span>` : ''}
+                                </div>
+                                <p class="text-xs text-slate-600 mt-0.5">${item.desc}</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 shrink-0">
+                            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 px-3 py-1.5 rounded-xl transition">
+                                <i class="fa-solid fa-map-location-dot text-sky-600"></i> ${item.mapLabel || 'Google Maps'}
+                            </a>
+                            <span class="text-xs font-bold bg-teal-50 text-teal-700 px-2.5 py-1.5 rounded-full">
+                                ${item.sdg}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 切換課表 / 15日行程
+        function switchScheduleTab(tab) {
+            const btnTrain = document.getElementById('btn-training');
+            const btnPalau = document.getElementById('btn-palau');
+            const panelTrain = document.getElementById('panel-training');
+            const panelPalau = document.getElementById('panel-palau');
+
+            if (tab === 'training') {
+                btnTrain.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-ocean-600 text-white shadow transition';
+                btnPalau.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition';
+                panelTrain.classList.remove('hidden');
+                panelPalau.classList.add('hidden');
+            } else {
+                btnPalau.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-ocean-600 text-white shadow transition';
+                btnTrain.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition';
+                panelPalau.classList.remove('hidden');
+                panelTrain.classList.add('hidden');
+            }
+        }
+
+        // Modal 控制
+        function openApplyModal() {
+            document.getElementById('modal-form-view').classList.remove('hidden');
+            document.getElementById('modal-success-view').classList.add('hidden');
+            document.getElementById('apply-modal').classList.remove('hidden');
+        }
+        function closeApplyModal() {
+            document.getElementById('apply-modal').classList.add('hidden');
+        }
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('modal-form-view').classList.add('hidden');
+            document.getElementById('modal-success-view').classList.remove('hidden');
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSpots('all');
+            renderDailySchedule();
+            document.getElementById('mobile-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
